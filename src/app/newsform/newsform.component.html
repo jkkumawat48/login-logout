@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Restaurent Login</h1>
+          <h5>Feel free to login</h5>
+          <hr>
+        </div>
+        <form [formGroup]=" newsform">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="name" formControlName="name" placeholder="Enter Your Name" class="form-control">
+            <!-- form errors? start -->
+            <div *ngIf="name!.invalid && (name!.touched || name!.dirty)">
+              <span class="errors" *ngIf="name.errors?.required" style="color: red;">Name is Required</span>
+              <span class="errors" *ngIf="name.errors?.pattern" style="color: red;">Enter Only Charector</span>
+            </div>
+            <!-- form errors end -->
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" formControlName="email" placeholder="Enter Your Email" class="form-control">
+            <div *ngIf="email.invalid && (email.touched || email.dirty)">
+              <span class="errors" *ngIf="email.errors?.required" style="color: red;">Email is Required</span>
+              <span class="errors" *ngIf="email.errors?.email" style="color: red;">Enter Valid Email Address</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" maxlength="5" formControlName="password" placeholder="Enter Your Password"
+              class="form-control">
+            <div *ngIf="password.invalid && (password.touched || password.dirty)">
+              <span class="errors" *ngIf="password.errors?.required" style="color:red ;">Password is Required</span>
+              <span class="errors" *ngIf="password.errors?.password" style="color: red;">Enter Only Number</span>
+            </div>
+          </div>
+          <button type="submit" [ngClass]="editmode ? 'btn-warning col-lg-12' : 'btn btn-info col-lg-12' "
+            (click)="submit()">{{editmode? 'UserUpdate': 'Login' }}</button>
+        </form>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of apiData; let i= index">
+              <td>{{i + 1}}</td>
+              <td>{{data.name}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.password}}</td>
+              <td><button (click)="edit(data,i)" class="btn btn-success">Edit</button></td>
+              <td><button (click)="delete(i)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.card{
+    margin-top: 15px;
+    border: 1px solid blue;
+    width: 550px;
+    padding: 45px;
+    position: absolute;
+    top: 10px;
+    left:30%
+}
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  .alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }

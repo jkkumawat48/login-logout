@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+<div class="box">
+
+    <form class="form" [formGroup]="loginform">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control col-lg-6" formControlName="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control col-lg-6" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label col-lg-6">Password</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+        </div>
+       
+        <button type="submit" class="btn btn-primary col-lg-12" (click)="submitData()">Submit</button>
+      </form>
+    </div>
+</div>
+</div>
+</div>
