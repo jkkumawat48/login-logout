@@ -31,9 +31,9 @@ const logApi = this.logform.value;
 this.newsapiservice.register(logApi).subscribe(res =>{
   if(res.token){
     this.router.navigateByUrl('/navbar')
-    alert("Login Succfully")
+    alert("Login Succfully Data")
   }
 })
 }
-get 
+
 }
