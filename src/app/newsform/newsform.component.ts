@@ -30,8 +30,8 @@ if(this.newsform.invalid){
 }
 if(this.editingIndex == 0 || this.editingIndex){
   this.apiData.splice(this.editingIndex,1,this.newsform.value)
+  this.editingIndex =null;
 console.log(this.editingIndex,1,this.newsform.value)
-  this.editingIndex = null;
   // console.log(this.editingIndex=null)
   this.editmode=false
 }else{

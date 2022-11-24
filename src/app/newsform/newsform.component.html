@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 ">
       <div class="card">
         <div class="text-center">
           <h1>Restaurent Login</h1>
@@ -8,7 +8,7 @@
           <hr>
         </div>
         <form [formGroup]=" newsform">
-          <div class="mb-3">
+          <div class=" mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
             <input type="name" formControlName="name" placeholder="Enter Your Name" class="form-control">
             <!-- form errors? start -->
@@ -35,7 +35,7 @@
               <span class="errors" *ngIf="password.errors?.password" style="color: red;">Enter Only Number</span>
             </div>
           </div>
-          <button type="submit" [ngClass]="editmode ? 'btn-warning col-lg-12' : 'btn btn-info col-lg-12' "
+          <button [disabled]="newsform.invalid" type="submit" [ngClass]="editmode ? 'btn-warning col-lg-12' : 'btn btn-info col-lg-12' "
             (click)="submit()">{{editmode? 'UserUpdate': 'Login' }}</button>
         </form>
 

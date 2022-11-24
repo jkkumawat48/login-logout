@@ -9,17 +9,30 @@
           <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>
               <input type="text" formControlName="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div *ngIf="this.username!.invalid && (username!.touched || username!.dirty)">
+<span class="errors" *ngIf="username!.errors?.['required']" style="color: red;">*Name is required</span>
+<span class="errors" *ngIf="username!.errors?.['pattern']" style="color: red;">*Enter Only Cheractor</span>
+
+              </div>
             </div>
           <div class="mb-3">
             <label for="exampleInputEmail1"  class="form-label">Email address</label>
             <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div *ngIf="this.email!.invalid && (email!.touched || email?.dirty)">
+<span class="errors" *ngIf="email!.errors?.['required']" style="color: red;">*Email is Required</span>
+<span class="errors" *ngIf="email!.errors?.['email']" style="color: red;">*Enter Only Cheractor</span>
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password"  formControlName="password" class="form-control" id="exampleInputPassword1">
+            <div *ngIf="this.password!.invalid && (password!.touched || password?.dirty)">
+<span class="errors" *ngIf="password!.errors?.['required']" style="color: red;">*Password is Required</span>
+<span class="errors" *ngIf="password!.errors?.['password']" style="color:red ;">*Enter Only Number</span>
+            </div>
           </div>
   
-          <button type="submit" class="btn btn-primary" (click)="log()" >Submit</button>
+          <button type="submit" [disabled]="logform.invalid" class="btn btn-primary" (click)="log()" >Submit</button>
         </form>
         <a style="color:blue; margin-top: 10px" routerLink="/logregister">New User ? Click to register !</a>
   

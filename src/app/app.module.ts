@@ -19,6 +19,7 @@ import { LogComponent } from './log/log.component';
 import { LogregisterComponent } from './logregister/logregister.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './newsform/navbar/navbar.component';
+import { FoodComponent } from './food/food.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { NavbarComponent } from './newsform/navbar/navbar.component';
     LogComponent,
     LogregisterComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,

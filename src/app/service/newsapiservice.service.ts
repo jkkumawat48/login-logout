@@ -18,6 +18,9 @@ businessApiUrl="https://newsapi.org/v2/top-headlines?country=in&category=busines
 
 registerApiUrl="https://ragister-api.herokuapp.com/api/register/"
 
+//foodApiurl
+foodApiUrl=" url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch',"
+
 // topheding()
 topHeading():Observable<any>{
   return this._http.get(this.NewsApiUrl)
@@ -46,7 +49,16 @@ register(logApi:any):Observable<any>{
   }));
 }
 
+food():Observable<any>{
+  return this._http.get(this.foodApiUrl)
+}
 
+foods(foodApi:any):Observable<any>{
+  return this._http.post<any>(" url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch',",foodApi).pipe(map(res=>{
+    console.log(res)
+    return res
+  }))
+}
 }
 
 

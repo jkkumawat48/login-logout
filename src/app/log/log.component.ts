@@ -18,9 +18,9 @@ logform!: FormGroup
 
   ngOnInit(): void {
     this.logform = this.formBuilder.group({
-      username: new FormControl ('',Validators.required),
-      email: new FormControl ('',Validators.required),
-      password: new FormControl ('',Validators.required)
+      username: new FormControl ('',[Validators.required,Validators.pattern('[a-zA-Z]*')]),
+      email: new FormControl ('',[Validators.required]),
+      password: new FormControl ('',[Validators.required,Validators.pattern('[0-9]*')])
     })
   }
 log(){
@@ -35,5 +35,7 @@ this.newsapiservice.register(logApi).subscribe(res =>{
   }
 })
 }
-
+get username(){return this.logform .get('username')}
+get email(){ return this.logform .get('email')}
+get password(){return this.logform.get('password')}
 }
